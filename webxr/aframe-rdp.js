@@ -320,7 +320,7 @@ AFRAME.registerComponent('webrtc-rdp', {
 	init() {
 		if (this.data.filesystem == 'all') {
 			// defined in ../app/rtcfilesystem-client.js
-			const roomIdPrefix = 'binzume@rdp-room-';
+			const roomIdPrefix = 'flipperzero@room-';
 			globalThis.rtcFileSystemManager?.registerAll((key, id) => new PlayerConnection(this.data.signalingUrl, key, id, null), roomIdPrefix);
 		}
 		// @ts-ignore
