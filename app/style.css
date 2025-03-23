@@ -1,7 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    
+    background: linear-gradient(145deg, rgb(205, 171, 23), #d50532);
+    
 }
 
 h1 {
