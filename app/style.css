@@ -16,60 +16,15 @@ h1 {
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: -0.05em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-body.standalone .browser {
-    display: none;
-}
-
-body.standalone :not(input):not(textarea) {
-    user-select: none;
-    cursor: default;
-}
-
-body.standalone .selectable {
-    user-select: all !important;
-    cursor: auto !important;
-}
-
-body.player .noplayer {
-    display: none;
-}
-
-#player {
-    display: none;
+h2 {
     text-align: center;
-}
-
-body.player #player {
-    display: block;
-}
-
-#player-menu {
-    height: 20px;
-    line-height: 1;
-}
-
-#player-menu button {
-    margin: 0px;
-    height: 20px;
-    min-height: 20px;
-    box-sizing: border-box;
-}
-
-#player-menu .onoff.active {
-    background-color: lightgreen;
-}
-
-#screen {
-    display: none;
-    width: 100%;
-    height: calc(100vh - 20px);
-    padding: 0;
-    margin: 0;
-    border: none;
-    background-color: #ccc;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 2rem;
 }
 
 #content {
@@ -107,141 +62,56 @@ body.player #player {
     text-align: center;
 }
 
-#pairing .pin {
-    font-size: 40pt;
-    color: #00bcd4;
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
-#pairing .pin * {
-    font-size: 40pt;
-}
-
-#pairing h2 {
-    font-size: 20pt;
-    text-align: center;
-    margin: 0 0 10pt 0;
-    padding: 0;
-    color: #dcdcdc;
-}
-
-#pairing input::-webkit-outer-spin-button,
-#pairing input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-#pairing input[type=number] {
-    -moz-appearance: textfield;
-    background: rgba(255, 255, 255, 0.1);
+.modern-button {
+    background: #00bcd4;
     color: #fff;
     border: none;
-    border-radius: 8px;
-    padding: 0.9rem;
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modern-button:hover {
+    background: #0097a7;
+    transform: translateY(-2px);
+}
+
+.modern-button:active {
+    transform: translateY(0);
+}
+
+.modern-input {
+    padding: 0.9rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
     transition: background 0.3s, box-shadow 0.3s;
 }
 
-#pairing input[type=number]:focus {
+.modern-input:focus {
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     outline: none;
 }
 
-#publishOrPlay {
-    text-align: center;
-}
-
-#player video {
-    touch-action: none;
-}
-
-#player .streamrect {
-    position: absolute;
-    overflow: hidden;
-    pointer-events: none;
-    box-sizing: border-box;
-    border: 2px solid red;
-    color: green;
-    text-align: center;
-    top: 0;
-    left: 0;
-}
-
-.streamlist li {
-    list-style-type: none;
-    text-align: left;
-}
-
-.streamlist .connectionstate {
-    margin: 0 10pt;
-}
-
-.streamlist .connectionstate_ready {
-    color: green;
-}
-
-.streamlist .connectionstate_connected {
-    color: red;
-}
-
-.streamlist .connectionstate_disconnected {
-    color: darkred;
-}
-
-#devices>div {
-    border: solid 1px rgba(255, 255, 255, 0.1);
-    min-height: 50pt;
-    border-radius: 6pt;
-    padding-bottom: 0 5pt;
-    margin-bottom: 8pt;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-#devices>div>span {
-    display: block;
-    border-top-left-radius: 4pt;
-    border-top-right-radius: 4pt;
-    width: 100%;
-    background-color: rgba(224, 232, 248, 0.1);
-    font-weight: bold;
-    margin-bottom: 4pt;
-    padding: 0.5rem;
-}
-
-#devices>div>span>span {
-    display: inline-block;
-    width: calc(100% - 30pt);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-#devices>div>span>button {
-    float: right;
-    background: #00bcd4;
-    color: #fff;
-    border: none;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-#devices>div>span>button:hover {
-    background: #0097a7;
-    transform: translateY(-2px);
-}
-
-.nodevices-msg {
-    display: none;
+.instruction {
+    font-size: 1rem;
     color: #ccc;
-    text-align: center;
-    padding: 1rem;
-}
-
-.nodevices .nodevices-msg {
-    display: block;
+    margin-top: 1rem;
 }
 
 .loading-spinner {
