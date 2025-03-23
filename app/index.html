@@ -1,53 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebRTC Remote Desktop</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>WebRTC Remote Desktop</title>
   <script src="node_modules/@open-ayame/ayame-web-sdk/dist/ayame.min.js"></script>
   <script src="rtcfilesystem-server.js?20220520"></script>
   <script src="webrtc-rdp.js?20220520"></script>
 </head>
+
 <body>
   <h1 class="noplayer browser">WebRTC Remote Desktop</h1>
   <h2 class="noplayer browser">Developed By Aviral Maheshwari</h2>
 
   <div id="content" class="noplayer">
-    <div id="pairing" class="block" style="display:none;">
-      <h2>Add new device</h2>
-      <div class="button-group">
-        <button id="generatePin" class="modern-button">Generate PIN</button>
-        <button id="inputPin" class="modern-button">Input PIN</button>
+  <div id="pairing" class="block" style="display:none;">
+    <h2>Add new device</h2>
+    <button id="generatePin">Generate PIN</button> / <button id="inputPin">Input PIN</button>
+    <div id="pinDisplayBox" style="display:none;">
+      <div class="pin">
+        PIN: <span id="pin" class="selectable"></span>
       </div>
-      <div id="pinDisplayBox" style="display:none;">
-        <div class="pin">
-          PIN: <span id="pin" class="selectable"></span>
-        </div>
-        <select id="modeSelect" class="modern-select">
-          <option value="twoway" selected>two-way</option>
-          <option value="host">host</option>
-          <option value="guest">guest</option>
-        </select><br />
-        <p class="instruction">Waiting.... Visit this page on peer device, and input the PIN.</p>
-      </div>
-      <form id="pinInputBox">
-        <div class="pin">
-          <input type="number" inputmode="numeric" maxlength="8" id="pinInput" class="modern-input" placeholder="Enter PIN" />
-          <button type='submit' class="modern-button">OK</button>
-        </div>
-        <p class="instruction">Visit this page on peer device, and generate PIN.</p>
-      </form>
+      <select id="modeSelect">
+        <option value="twoway" selected>two-way</option>
+        <option value="host">host</option>
+        <option value="guest">guest</option>
+      </select><br />
+      Waiting.... Visit this page on peer device, and input the PIN.
     </div>
+    <form id="pinInputBox">
+      <div class="pin">
+        PIN:<input type="number" inputmode="numeric" maxlength="8" id="pinInput"
+          style="width:200pt;height:50pt;" /><button type='submit' style="width:80pt;height:50pt;">OK</button>
+      </div>
+      Visit this page on peer device, and generate PIN.
+    </form>
+  </div>
 
-    <div id="publishOrPlay" style="display:none;text-align: center">
-      <div style="text-align:right;">
-        <button id="addDeviceButton" class="modern-button">Add Device</button>
-        <button class="browser modern-button" id="clearSettingsButton">Reset Settings</button>
-      </div>
-      <div id="devices"></div>
-      <ul id="files" class="streamlist"></ul>
+  <div id="publishOrPlay" style="display:none;text-align: center">
+    <div style="text-align:right;">
+      <button id="addDeviceButton">Add Device</button>
+      <button class="browser" id="clearSettingsButton">Reset Settings</button>
     </div>
+    <div id="devices"></div>
+    <ul id="files" class="streamlist"></ul>
+    
+  </div>
   </div>
 
   <div id="player" style="width: 100%; height: 100vh; position: relative; overflow: hidden;">
@@ -67,5 +64,9 @@
       Connecting...
     </div>
   </div>
+
+  
+
 </body>
+
 </html>
